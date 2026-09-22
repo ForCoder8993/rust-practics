@@ -1,0 +1,35 @@
+struct Player {
+    name: String, 
+    hp: i32, 
+    
+}
+impl Player {
+    fn heal_player(&mut self, amount: i32) {
+        self.hp = self.hp + amount;
+        
+    }
+    fn damage_player(&mut self, damage: i32) {
+        self.hp = self.hp - damage;
+        
+    }
+    fn show_status(&self ) {
+        println! ("{} name {} hp ", self.name, self.hp) ;
+        
+    }
+}
+fn main() {
+    let mut p1 = Player {
+        name: String::from("XYLoN"), 
+        hp: 100,
+        
+    };
+    
+    p1.heal_player(100);
+    println! ("XyLon got {} hp", p1.hp) ;
+    
+    p1.damage_player(100);
+    
+    println! ("Oh no he got damage hp down to {}", p1.hp) ;
+    
+    p1.show_status();
+}
